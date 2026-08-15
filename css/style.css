@@ -1,0 +1,663 @@
+/*** CSS Styles  ***/
+
+
+/*pour animation : voir tp CSS Steps / animation in css */
+
+
+/* Général  */
+
+html {
+    background: url(../images/bg.jpg) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Gabriola";
+    padding: 40px;
+    font-size: 1.5em;
+}
+
+button {
+    cursor: pointer;
+}
+
+#fenetreJeu {
+    height: 500px;
+    width: 800px;
+    left: 250px;
+    /*    border: solid;*/
+    position: absolute;
+}
+
+#cadre {
+    position: absolute;
+    top: -3px;
+    left: 190px;
+}
+
+
+/* ------------- Texte -----------------*/
+
+#dialogueContainer {
+    height: 100%;
+    width: 100%;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    position: absolute;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-top: 130px;
+}
+
+#overflowText {
+    position: absolute;
+    bottom: 0px;
+    left: 150px;
+    width: 500px;
+    height: 132px;
+    overflow: hidden;
+    z-index: 0;
+}
+
+#textDialogue {
+    padding: 5px;
+    line-height: 97%;
+    position: absolute;
+    top: 40px;
+    z-index: 1;
+    left: 70px;
+    width: 370px;
+    /*    text-align: justify;*/
+}
+
+#imgDialogueBox {
+    position: absolute;
+    top: 10px;
+}
+
+
+/* ------------- Transitions -----------------*/
+
+#transitionFondu {
+    display: none;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    position: absolute;
+    z-index: 0;
+    background-color: black;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+}
+
+#ink {
+    animation: inkAnim 3s steps(24);
+    animation-fill-mode: forwards;
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-image: url(../images/ink.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: left center;
+    z-index: 100;
+    display: none;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+@keyframes inkAnim {
+    100% {
+        background-position: -21334px;
+    }
+}
+
+
+/* ------------- Cinematique ----------------- */
+
+#cinematique {
+    display: none;
+    position: absolute;
+}
+
+#imagesCinematiqueA {
+    display: block;
+    position: absolute;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+#imagesCinematiqueB {
+    display: block;
+    position: absolute;
+    opacity: 0;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+#passer {
+    position: absolute;
+    z-index: 2;
+    top: 430px;
+    left: 530px;
+    cursor: pointer;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+#passer:hover {
+    transform: scale(1.1);
+}
+
+
+/* ------------- Timer -----------------------*/
+
+#timer {
+    position: absolute;
+    left: 1100px;
+    opacity: 0;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}
+
+#chienTimer {
+    height: 90px;
+    position: absolute;
+}
+
+#overflowChien {
+    height: 430px;
+    overflow: hidden;
+    width: 165px;
+    position: absolute;
+}
+
+#limbesTimer {
+    top: 360px;
+    position: absolute;
+    height: 130px;
+    left: -25px;
+}
+
+
+/* ------------- Menu Principal -----------------*/
+
+#menuPrincipal {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+#nomJeu {
+    font-size: 200%;
+    z-index: 1;
+    position: absolute;
+    left: 200px;
+    top: 50px;
+}
+
+#animMenu {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+#jouer {
+    position: absolute;
+    top: 300px;
+    right: 100px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+    z-index: 1;
+}
+
+#jouer:hover {
+    -webkit-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3);
+}
+
+
+/* ------------- Menu Gauche -------------*/
+
+#menuGauche {
+    position: absolute;
+    width: 200px;
+    height: 500px;
+    text-align: center;
+}
+
+#oreille {
+    height: 100px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#oreille:hover {
+    transform: scale(1.1);
+}
+
+#mapIcon {
+    height: 100px;
+    cursor: pointer;
+    transition: 0.5s;
+    display: none;
+    margin-left: 82px;
+}
+
+#mapIcon:hover {
+    transform: rotate(180deg);
+}
+
+
+/* ------------- map -------------------*/
+
+#map {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    display: none;
+}
+
+#boussole {
+    position: absolute;
+    left: 375px;
+    top: 156px;
+}
+
+#aiguille {
+    transition: 1s;
+}
+
+#mapLabo {
+    position: absolute;
+    border: solid;
+    height: 150px;
+    width: 200px;
+    top: 175px;
+    left: 50px;
+    transition: 0.3s;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+#mapLabo:hover {
+    transform: scale(1.1);
+}
+
+#textMapLabo {
+    position: absolute;
+    top: 350px;
+    left: 68px;
+}
+
+#mapChambre {
+    position: absolute;
+    border: solid;
+    height: 150px;
+    width: 200px;
+    top: 175px;
+    right: 50px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#mapChambre:hover {
+    transform: scale(1.1);
+}
+
+#imgMapPentacle {
+    height: 130px;
+    margin-top: 10px;
+    margin-left: 35px;
+}
+
+#imgMapJardin {
+    height: 150px;
+}
+
+#textMapChambre {
+    position: absolute;
+    top: 350px;
+    right: 100px;
+}
+
+
+/* ------------- chambre noire -----------------*/
+
+#chambreNoire {
+    position: absolute;
+    z-index: 10;
+    display: none;
+}
+
+#pentacle {
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    left: 250px;
+    top: 60px;
+}
+
+#circle1 {
+    position: absolute;
+    transform: rotate(220deg);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+#circle2 {
+    position: absolute;
+    transform: rotate(160deg);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+#circle3 {
+    position: absolute;
+    transform: rotate(0deg);
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+}
+
+
+/* --------- laboBotanique -------------*/
+
+#laboBotanique {
+    position: absolute;
+    z-index: 10;
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+#labo {
+    position: absolute;
+    display: none;
+}
+
+#alembic {
+    position: absolute;
+}
+
+#potion {
+    position: absolute;
+    z-index: 2;
+    top: 263px;
+    left: 194px;
+    opacity: 0.7;
+}
+
+#potion:hover {
+    opacity: 1;
+    -webkit-transition: 0.5s;
+    -o-transition: 0.5s;
+    transition: 0.5s;
+}
+
+#inventaire {
+    position: absolute;
+    top: 0;
+    right: 0px;
+    width: 110px;
+    height: 100%;
+    text-align: center;
+}
+
+#imgInventaire {
+    position: absolute;
+    top: -18px;
+    left: -3px;
+    z-index: 1;
+}
+
+.objetsBotaniques {
+    cursor: pointer;
+    position: absolute;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    text-align: center;
+    display: flex;
+    z-index: 3;
+}
+
+.descriptionBotanique {
+    margin-top: -20px;
+    display: none;
+}
+
+#graine {
+    top: 458px;
+    left: 556px;
+}
+
+#arbre {
+    top: 0px;
+    left: 407px;
+}
+
+#arbreMini {
+    display: none;
+    left: 422px;
+    top: 100px;
+}
+
+#bourgeon {
+    top: 222px;
+    left: 200px;
+}
+
+#pousse {
+    top: 262px;
+    left: 349px;
+}
+
+#fleur {
+    top: 329px;
+    left: 116px;
+}
+
+#fruit {
+    top: 438px;
+    left: 520px;
+}
+
+
+/* ----------Limbes ----------*/
+
+#imageTransitionLimbes {
+    display: none;
+    position: absolute;
+}
+
+#limbes {
+    position: absolute;
+    display: none;
+    height: 100%;
+    width: 100%;
+}
+
+#imgLimbes {
+    position: absolute;
+}
+
+.mot {
+    border: solid black 2px;
+    position: absolute;
+    cursor: pointer;
+    vertical-align: top;
+    padding-left: 5px;
+    padding-right: 5px;
+    z-index: 2;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    border-radius: 5px;
+}
+
+#nuageMots {
+    opacity: 0;
+    position: absolute;
+    height: 250px;
+    width: 450px;
+    right: 0px;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    z-index: 2;
+}
+
+#ameFleur {
+    cursor: pointer;
+    position: absolute;
+    top: 300px;
+    left: 650px;
+    z-index: 2;
+}
+
+#ameChien {
+    position: absolute;
+    left: 200px;
+    top: 100px;
+    z-index: 2;
+}
+
+#excuse {
+    top: 100px;
+    left: 30px
+}
+
+#moi {
+    top: 40px;
+    left: 50px
+}
+
+#reviens {
+    top: 20px;
+    left: 120px
+}
+
+#je {
+    top: 60px;
+    left: 270px;
+}
+
+#mon {
+    top: 140px;
+    left: 200px
+}
+
+#chien {
+    top: 120px;
+    left: 280px
+}
+
+#suis {
+    top: 130px;
+    left: 100px
+}
+
+#la {
+    top: 80px;
+    left: 180px
+}
+
+#nuage {
+    position: absolute;
+    z-index: 1;
+    left: 318px;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+}
+
+#boxDialogueChien {
+    position: absolute;
+    top: 260px;
+    left: 95px;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+    z-index: 1;
+}
+
+#dire {
+    position: absolute;
+    top: 345px;
+    left: 219px;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    cursor: pointer;
+    display: none;
+    z-index: 1;
+}
+
+#dire:hover {
+    transform: scale(1.1);
+}
+
+
+/* ----------GAME OVER ----------*/
+
+#gameOver {
+    position: absolute;
+    display: none;
+    z-index: 1;
+}
+
+#imgGameOver {
+    position: absolute;
+    display: block;
+    z-index: 1;
+}
+
+
+/* ---------- VICTOIRE ------------ */
+
+#victoire {
+    position: absolute;
+    display: none;
+}
+
+.imgVictoire {
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+    opacity: 0;
+    position: absolute;
+}
+
+#credits {
+    position: absolute;
+    z-index: 101;
+    text-align: center;
+    width: 800px;
+    top: 100px;
+    opacity: 0;
+    color: white;
+    -webkit-transition: 1s;
+    -o-transition: 1s;
+    transition: 1s;
+}

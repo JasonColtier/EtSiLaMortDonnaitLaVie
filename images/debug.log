@@ -1,0 +1,14 @@
+[1021/161155:ERROR:tcp_socket_win.cc(360)] bind() returned an error: Une seule utilisation de chaque adresse de socket (protocole/adresse réseau/port) est habituellement autorisée. (0x2740)
+[1021/161155:ERROR:devtools_http_handler_impl.cc(728)] Cannot start http server for devtools. Stop devtools.
+[1021/161159:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[1021/161201:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[1021/161330:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[1021/161330:WARNING:message_in_transit_queue.cc(18)] Destroying nonempty message queue
+[1021/161330:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[1021/161330:WARNING:message_in_transit_queue.cc(18)] Destroying nonempty message queue
+[1021/161547:WARNING:message_in_transit_queue.cc(18)] Destroying nonempty message queue
+[1021/161547:ERROR:renderer_main.cc(207)] Running without renderer sandbox
+[1021/161547:WARNING:message_in_transit_queue.cc(18)] Destroying nonempty message queue
+[1021/173956:WARNING:message_in_transit_queue.cc(18)] Destroying nonempty message queue
+[1021/173956:WARNING:message_in_transit_queue.cc(18)] Destroying nonempty message queue
+[1021/173956:ERROR:gpu_process_transport_factory.cc(437)] Failed to establish GPU channel.

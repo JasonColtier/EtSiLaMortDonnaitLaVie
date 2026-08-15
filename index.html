@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name='copyright' content="">
+    <meta property="og:title" content="" />
+    <meta property="og:type" content="" />
+    <meta property="og:image" content="" />
+    <meta property="og:url" content="" />
+    <meta property="og:description" content="" />
+    <meta name='language' content="fr">
+    <title>Et si la mort donnait la vie ?</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900">
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+</head>
+
+<body>
+    <img src="images/cadre.png" id="cadre" />
+    <div id="fenetreJeu">
+
+        <!--écran principal-->
+        <div id="menuPrincipal">
+            <div id="nomJeu">Et si la mort donnait la vie ?</div>
+            <img src="images/jouer.png" id="jouer" onclick="cinematique()">
+            <img src="images/anim_menu.gif" id="animMenu" />
+        </div>
+
+        <!--cinématique d'intro-->
+        <div id="cinematique">
+            <img id="passer" src="images/passer.png" onclick="passerCinematique()">
+            <img id="imagesCinematiqueA" src="images/cinematique1.png">
+            <img id="imagesCinematiqueB" src="images/cinematique2.png">
+        </div>
+
+        <!--la map -->
+        <div id="map">
+            <div id="mapLabo" onmouseover="rotationAiguille('left')" onclick="loadLabo()">
+                <img src="images/jardin.png" id="imgMapJardin" />
+
+            </div>
+            <div id="textMapLabo">Laboratoire Botanique</div>
+            <div id="mapChambre" onmouseover="rotationAiguille('right')" onclick="transitionScene('chambreNoire')">
+                <img src="images/map_pentacle.png" id="imgMapPentacle" />
+            </div>
+            <div id="textMapChambre">Chambre Noire</div>
+            <div id="boussole">
+                <img src="images/boussole.png" id="aiguille" />
+            </div>
+        </div>
+
+
+        <!-- La chambre Noire -->
+        <div id="chambreNoire">
+            <div id="deplacementsRestants">Déplacement Restants : 100</div>
+            <div id="pentacle">
+                <img src="images/circle_03.png" id="circle3" />
+                <img src="images/circle_02.png" id="circle2" />
+                <img src="images/circle_01.png" id="circle1" onclick="rotationCircle(event)" />
+            </div>
+        </div>
+
+        <!--le laboratoire botanique-->
+        <div id="laboBotanique">
+            <div id="inventaire">
+                <img src="images/inventaire.png" id="imgInventaire" />
+            </div>
+            <div class="objetsBotaniques" value="notInInv" id="graine"><img src="images/graines.png" value="1" />
+                <div class="descriptionBotanique">graine</div>
+            </div>
+            <div class="objetsBotaniques" value="notInInv" id="pousse"><img src="images/pousse.png" value="2" />
+                <div class="descriptionBotanique">pousse</div>
+            </div>
+            <div class="objetsBotaniques" value="notInInv" id="arbre"><img src="images/arbre.png" value="3" />
+                <div class="descriptionBotanique">arbre</div>
+            </div>
+            <div class="objetsBotaniques" value="notInInv" id="arbreMini"><img src="images/arbre_mini.png" value="3" />
+                <div class="descriptionBotanique">arbre</div>
+            </div>
+            <div class="objetsBotaniques" value="notInInv" id="bourgeon"><img src="images/bourgeon.png" value="4" />
+                <div class="descriptionBotanique">bourgeon</div>
+            </div>
+            <div class="objetsBotaniques" value="notInInv" id="fleur"><img src="images/fleur.png" value="5" />
+                <div class="descriptionBotanique">fleur</div>
+            </div>
+            <div class="objetsBotaniques" value="notInInv" id="fruit"><img src="images/fruit.png" value="6" />
+                <div class="descriptionBotanique">fruit</div>
+            </div>
+            
+            <!--le jardin-->
+            <div id="jardin">
+                <img src="images/jardin.png" id="imgJardin" />
+            </div>
+            
+            <!--le laboratoire-->
+            <div id="labo">
+                <img src="images/alembic.png" id="alembic" />
+                <img src="images/liquide_potion.png" id="potion" />
+            </div>
+        </div>
+
+        <!--images de transition vers les limbes-->
+        <div id="imageTransitionLimbes"><img src="images/transition_limbes.png" style="position: absolute" /></div>
+
+        <!--les limbes-->
+        <div id="limbes">
+            <div id="ameFleur" onclick="dialogueFleur()">
+                <img src="images/ame_fleur.png" />
+            </div>
+            <div id="ameChien" onclick="dialogueChien()">
+                <img src="images/ame_torturee.png" />
+            </div>
+            <div id="nuageMots">
+                <div class="mot" id="excuse">excuse</div>
+                <div class="mot" id="moi">moi</div>
+                <div class="mot" id="reviens">reviens</div>
+                <div class="mot" id="mon">mon</div>
+                <div class="mot" id="chien">chien</div>
+                <div class="mot" id="je">je</div>
+                <div class="mot" id="suis">suis</div>
+                <div class="mot" id="la">là</div>
+            </div>
+            <img src="images/nuage.png" id="nuage" />
+            <img src="images/box_dialogue_chien.png" id="boxDialogueChien" />
+            <img src="images/dire.png" id="dire" onclick="checkMots()" />
+            <img src="images/limbes.png" id="imgLimbes" />
+        </div>
+
+        <!--messages textuels-->
+        <div id="overflowText">
+            <div id="dialogueContainer">
+                <div id="textDialogue"></div>
+                <img src="images/dialogue_box.png" id="imgDialogueBox" />
+            </div>
+        </div>
+
+        <!--game over-->
+        <div id="gameOver">
+            <img src="images/gameOver.png" id="imgGameOver" />
+        </div>
+
+        <!--cinématique de fin-->
+        <div id="victoire">
+            <img src="images/victoire1.png" id="imgVictoire1" class="imgVictoire" />
+            <img src="images/victoire2.png" id="imgVictoire2" class="imgVictoire" />
+            <img src="images/victoire3.png" id="imgVictoire3" class="imgVictoire" />
+            <img src="images/victoire4.png" id="imgVictoire4" class="imgVictoire" />
+            <div id="credits">
+                <p class="textCredits">Jeu réalisé par</p>
+                <p class="textCredits">Jason Coltier</p>
+                <p class="textCredits">Cours d'interactivité</p>
+                <p class="textCredits">UQAT 2017</p>
+            </div>
+        </div>
+
+        <!-- transitions et fondus-->
+        <div id="transitionFondu"></div>
+        <div id="ink"></div>
+    </div>
+
+    <!--   menu de gauche-->
+    <div id="menuGauche">
+        <div id="musique">
+            <audio id="audio" autoplay>
+		  <source id="musiqueSource" src="song/aurora_theme.mp3" type="audio/mpeg">
+		</audio>
+            <img src="images/ear.png" id="oreille" />
+        </div>
+        <img src="images/boussole.png" id="mapIcon" onclick="transitionScene('map')" />
+    </div>
+
+    <!--    timer-->
+    <div id="timer">
+        <div id="overflowChien">
+            <img src="images/chien_timer.png" id="chienTimer" />
+        </div>
+        <img src="images/limbes_timer.png" id="limbesTimer" />
+    </div>
+
+    <!--lien du fichier javascript-->
+    <script type="text/javascript" src="js/script.js"></script>
+</body>
+
+</html>
